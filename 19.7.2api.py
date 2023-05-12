@@ -131,9 +131,8 @@ class PetFriends:
         return status, result
 
     def add_photo_to_pet(self, auth_key: json, pet_id: str, pet_photo: str) -> json:
-        """Метод   фотографию питомца и возвращает статус
-        запроса на сервер и результат в формате JSON с данными добавленного питомца"""
-
+        """Метод отправляет на сервер фото к добавленному ранее ранее питомцу. Возвращает статус
+        запроса  и данные питомца в JSON"""
         data =MultipartEncoder(
             fields={
                 'pet_photo': (pet_photo, open(pet_photo, 'rb'), 'image/jpeg')
