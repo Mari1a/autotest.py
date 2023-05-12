@@ -137,7 +137,7 @@ def test_add_new_pet_empty_values(name='', animal_type='', age=''):
     assert result['name'] == name
 
 
-def test_add_photo_to_pet(pet_photo="images/catEnot.jpg"):
+def test_add_photo_to_pet(pet_photo="images/dog1.jpg"):
     """Проверяем что можно добавить фото питомца """
     _, auth_key = pf.get_api_key(valid_email, valid_password)
     _, my_pets = pf.get_list_of_pets(auth_key, "my_pets")
@@ -154,8 +154,8 @@ def test_add_photo_to_pet(pet_photo="images/catEnot.jpg"):
     assert status == 200
     assert pet_id == pet_id
 
-def test_add_new_pet_without_photo_extra(name='Енот', animal_type='кот-енот',
-                                         age='2', pet_photo='images/catEnot.jpg'):
+def test_add_new_pet_without_photo_extra(name='Лейла', animal_type='шпиц',
+                                         age='2', pet_photo='images/dog1.jpg'):
     """Проверяем  неготивным тестом что можно добавить питомца с лишними значениями"""
 
     # Запрашиваем ключ api и сохраняем в переменую auth_key
